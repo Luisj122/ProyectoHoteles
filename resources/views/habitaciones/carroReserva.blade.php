@@ -56,6 +56,52 @@
                     </div>
                 </div>
             </div>
+
+            <script src="https://www.paypal.com/sdk/js?client-id=AX02v2Go2PBLa25LvY-LwYHJu2qACOrgiNq7D330pOy7g4YAslw5KSkdLkE6NUkugdzXNVtK5ORgyXIg&currency=EUR">
+            </script>
+
+            <div id="paypal-button-conteiner"></div>
+            <script>
+                paypal.Buttons({
+                    style:{
+                        label: 'pay'
+                    }, createOrder: function(data, actions){
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount:{
+                                    value: {{$total}}
+                                }
+                            }]
+                        })
+                    },
+
+                    onApprove:  function (data, actions){
+                        actions.order.capture().then(function(detalles){
+                            console.log(detalles);
+                        });
+                    },
+
+                    onCancel:function(data){
+                        alert("pago cancelado");
+                        console.log(data);
+                    }
+                }).render('#paypal-button-conteiner');
+            </script>
+
         </div>
     </div>
+
+
+    {{-- <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="text-center">
+            <img src="ruta/a/tu/logo.png" alt="Logo" class="img-fluid">
+            <h1 class="mt-4">¡Gracias por su compra!</h1>
+            <p class="mt-4">Estimado cliente,</p>
+            <p>Queremos agradecerle por su compra. Valoramos su confianza en nosotros y esperamos que disfrute de su producto/servicio.</p>
+            <p>Si tiene alguna pregunta o necesita asistencia adicional, no dude en ponerse en contacto con nuestro equipo de atención al cliente.</p>
+            <p>¡Gracias nuevamente y que tenga un excelente día!</p>
+          </div>
+        </div>
+      </div> --}}
 </x-app-layout>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Habitaciones;
 use App\Models\Habitaciones_users;
 use App\Models\Hoteles;
 use App\Models\User;
@@ -32,7 +33,10 @@ class HotelesController extends Controller
     public function vistaReserva(User $user) 
     {
         //echo Hoteles::where('usuario_id', 3)->count();
-        return view('habitaciones.vistaReserva', ['reservas' => $user->habitaciones()->get(), 'detalles'=>Habitaciones_users::where('user_id', $user->id)->get(), 'usuarios'=>$user]);
+
+        $habitaciones = Habitaciones_users::all();
+  
+        return view('habitaciones.vistaReserva', ['reservas' => $user->habitaciones()->get(), 'detalles'=>$habitaciones, 'usuarios'=>$user]);
     }
 
     public function regresar(Request $request) 

@@ -3,6 +3,20 @@
         @foreach ($reservas as $reserva)
             @foreach ($detalles as $detalle)
                 @if ($reserva->id == $detalle->habitaciones_id && $detalle->fecha_salida > now())
+
+                {{-- Controlar si la fecha de la reserva expira la habitacion se pasa a ser libre --}}
+                @php
+        
+                    if ($detalle->fecha_salida < now()) {
+                        $habitacion = \App\Models\Habitaciones::find($detalle->habitaciones_id);
+                            $habitacion->disponibilidad = "libre";
+                            $habitacion->save();
+                           
+                        $detalle->delete();
+
+                    }
+                @endphp
+
                     <div class="col-md-4 col-sm-6 mb-4">
                         <div class="card">
                             <img src="{{ asset($reserva->imagen) }}" class="card-img-top" alt="Imagen">

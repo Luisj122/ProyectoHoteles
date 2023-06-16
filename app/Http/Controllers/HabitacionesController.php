@@ -70,13 +70,14 @@ class HabitacionesController extends Controller
      */
     public function detalle(Hoteles $hoteles, Request $request)
     {
-            $habitaciones = Habitaciones::where('disponibilidad', 'libre')->orWhereIn('id', function ($query) {
-                $query->select('habitaciones_id')->from('habitaciones_users')->orWhere('fecha_salida', '<', now());
-            })->get();
+        $habitaciones = Habitaciones::where('disponibilidad', 'libre')->orWhereIn('id', function ($query) {
+            $query->select('habitaciones_id')->from('habitaciones_users')->where('fecha_salida', '<', now());
+        })->get();
+    
         
-            $ciudad = $request->input('ciudad');
-            
-            return view('habitaciones.reservaHabitacion', ['hoteles' => $hoteles, 'habitaciones' => $habitaciones, 'fechaEntrada' => $request->input('fechaEntrada'), 'fechaSalida' => $request->input('fechaSalida'), 'reservas' => Habitaciones_users::all(), 'ciudad'=>$ciudad]);
+        $ciudad = $request->input('ciudad');
+        
+        return view('habitaciones.reservaHabitacion', ['hoteles' => $hoteles, 'habitaciones' => $habitaciones, 'fechaEntrada' => $request->input('fechaEntrada'), 'fechaSalida' => $request->input('fechaSalida'), 'reservas' => Habitaciones_users::all(), 'ciudad'=>$ciudad]);
 
     }
 
@@ -90,6 +91,7 @@ class HabitacionesController extends Controller
         $habitacionDisponibilidad->disponibilidad = "ocupada";
         $habitacionDisponibilidad->save();
 
+        //Me pinta si la disponibilidad de la habitacion esta libre o si las fechas de los clientes ya an cadudacado
         $habitaciones = Habitaciones::where('disponibilidad', 'libre')->orWhereIn('id', function ($query) {
             $query->select('habitaciones_id')->from('habitaciones_users')->orWhere('fecha_salida', '<', now());
         })->get();
