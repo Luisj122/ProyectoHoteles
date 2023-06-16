@@ -5,11 +5,11 @@
 
     <div class="py-12">
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" >
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <table class="w-full text-sm text-left text-gray-500 " >
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     Nombre
@@ -42,7 +42,7 @@
                             @foreach($hoteles as $value)
                             <form method="POST" action='/hotel/update/{{ $value->id }}' enctype="multipart/form-data">
                                 @csrf
-                                <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                <tr class="bg-white border-b ">
                                     <td class="px-6 py-4">
                                         <x-text-input id="nombre" class="block mt-1 w-full" type="text" name="nombre" value="{{ $value->nombre }}" required autofocus autocomplete="nombre" />
                                     </td>
@@ -74,7 +74,7 @@
                                     </td>
 
                                     <td class="px-6 py-4">
-                                        <textarea class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm block mt-1 w-full" id="descripcion" name="descripcion"  required autofocus autocomplete="descripcion" rows="1" cols="50">{{$value->descripcion}}</textarea>
+                                        <textarea class="border-gray-300  focus:border-indigo-500  focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" id="descripcion" name="descripcion"  required autofocus autocomplete="descripcion" rows="1" cols="50">{{$value->descripcion}}</textarea>
                                     </td>
                     
                                     <td class="px-6 py-4">

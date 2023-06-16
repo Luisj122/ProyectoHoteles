@@ -122,6 +122,10 @@ class HotelesController extends Controller
         $ciudad = $request->input('ciudad');
         $fechaEntrada = $request->input('fechaEntrada');
         $fechaSalida = $request->input('fechaSalida');
+
+
+        
+
         $hoteles = Hoteles::where('nombre', $nombreHotel)->orWhere('categoria',$estrella)->where('ciudad', $ciudad)->get();
         return view('hoteles.reserva', ['hoteles' => $hoteles, 'fechaEntrada' => $fechaEntrada, 'fechaSalida' => $fechaSalida, 'ciudad'=>$ciudad]);
     }
