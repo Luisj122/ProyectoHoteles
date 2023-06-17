@@ -7,30 +7,31 @@
                 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-white-500">
-                    <x-nav-link :href="'/habitacion'" :active="request()->routeIs('dashboard')" class="text-white">
+                    <x-nav-link :href="'/habitacion'" :active="request()->routeIs('dashboard')" class="text-white text-lg">
                         {{ __('Inicio') }}
                     </x-nav-link>
                 </div>
                 @if (Auth::check() && Auth::user()->rol != 'admin')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-white-500">
-                        <x-nav-link :href="'/nuevo/hotel'" :active="request()->routeIs('dashboard')" class="text-white">
+                        <x-nav-link :href="'/nuevo/hotel'" :active="request()->routeIs('dashboard')" class="text-white text-lg">
                             {{ __('Anuncia tu alojamiento') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="'/reservas/cliente/' . Auth::user()->id" :active="request()->routeIs('dashboard')" class="text-white">
+                        <x-nav-link :href="'/reservas/cliente/' . Auth::user()->id" :active="request()->routeIs('dashboard')" class="text-white text-lg">
                             {{ __('Ver tus reservas') }}
                         </x-nav-link>
                     </div>
                 @endif
                 @if (Auth::check() && Auth::user()->rol == 'creador')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex text-white-500">
-                        <x-nav-link :href="'/creador'" :active="request()->routeIs('dashboard')" class="text-white">
+                        <x-nav-link :href="'/creador'" :active="request()->routeIs('dashboard')" class="text-white text-lg">
                             {{ __('Ver tus Alojamientos') }}
                         </x-nav-link>
                     </div>
                 @endif
             </div>
+            
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">

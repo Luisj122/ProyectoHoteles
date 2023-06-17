@@ -66,26 +66,31 @@
                                 font-family: 'Roboto', sans-serif;"><strong>{{ $value->nombre }}</strong></h3>
                                 @switch($value->categoria )
                                     @case("uno")
-                                    <i class="fas fa-star text-secondary"></i>
+                                        <i class="fas fa-star text-warning"></i>
                                         @break
-
                                     @case("dos")
-                                    <i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
                                         @break
-
                                     @case("tres")
-                                    <i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
                                         @break
-
                                     @case("cuatro")
-                                    <i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
                                         @break
-
                                     @case("cinco")
-                                    <i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
                                         @break
                                     @default
-                                        
                                 @endswitch
                    
                                 <p class="card-text" style="font-family: 'Montserrat', sans-serif;
@@ -103,7 +108,7 @@
                                 <input type="hidden" name="fechaSalida" id="fechaSalida" value="{{ $fechaSalida }}">
                                 <input type="hidden" name="ciudad" id="ciudad" value="{{ $ciudad }}">
       
-                                <button class="btn btn-danger mt-4">Detalles</button>
+                                <button class="btn btn-danger mt-4">Buscar</button>
                                 
                             </div>
                         </div>
@@ -116,51 +121,128 @@
 
             </div>
         </div>
+
+        
     </div>
 
-</x-app-layout>
-<footer class="bg-dark text-center text-white">
-    <!-- Grid container -->
-    <div class="container p-4 pb-0">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a
-          class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#" role="button"
-          ><i class="fab fa-facebook-f"></i></a>
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-dark text-muted" style="margin-top: auto;">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
   
-        <!-- Twitter -->
-        <a
-          class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#" role="button"
-          ><i class="fab fa-twitter"></i></a>
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
   
-        <!-- Google -->
-        <a
-          class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#" role="button"
-          ><i class="fab fa-google"></i></a>
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Hoteles
+            </h6>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque dignissimos magnam harum quibusdam doloribus voluptas accusamus illo voluptates ipsam delectus.
+            </p>
+          </div>
+          <!-- Grid column -->
   
-        <!-- Instagram -->
-        <a
-          class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#" role="button"
-          ><i class="fab fa-instagram"></i></a>
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Angular</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">React</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Vue</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Laravel</a>
+            </p>
+          </div>
+          <!-- Grid column -->
   
-        <!-- Linkedin -->
-        <a
-          class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#" role="button"
-          ><i class="fab fa-linkedin-in"></i></a>
-        <!-- Github -->
-        <a
-          class="btn text-white btn-floating m-1" style="background-color: #333333;" href="#" role="button"><i class="fab fa-github"></i></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> Pulpi, Calle, ES</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              luis@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
   
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">Hoteles.com</a>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023 Hoteles. All rights reserved.
     </div>
-    <!-- Copyright -->
   </footer>
-  
+  <!-- Footer -->
+
+</x-app-layout>
