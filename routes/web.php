@@ -3,6 +3,8 @@
 use App\Http\Controllers\HabitacionesController;
 use App\Http\Controllers\HotelesController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Habitaciones;
+use App\Models\Hoteles;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +19,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $hoteles = Hoteles::all();
+       
+        $hotelCiudad = $hoteles->pluck('ciudad')->toArray();
+        $uniqueHotelNames = array_unique($hotelCiudad);        
+
+        return view('habitaciones.vistaInicio', ['habitaciones' => Habitaciones::all(), 'hoteles' => $uniqueHotelNames]);
 });
+   
+
+        
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
