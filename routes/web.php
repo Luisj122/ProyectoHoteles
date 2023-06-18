@@ -62,6 +62,8 @@ Route::middleware(['auth', 'rol:creador'])->group(function () {
     Route::get('/hotel/borrar/{hoteles}' , [HotelesController::class, 'destroy']);
     Route::post('/hotel/update/{hoteles}' , [HotelesController::class, 'update']);
     Route::get('/hotel/detalle/{hoteles}' , [HotelesController::class, 'show']);
+    Route::post('/habitacion/update/{habitaciones}',[HabitacionesController::class, 'update']);
+
 });
 
 

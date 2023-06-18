@@ -5,7 +5,7 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body" style="padding: 15px;">
-                        <h5 class="card-title">Filtrador</h5>
+                        <h5 class="card-title"><strong>Filtrador</strong></h5>
                         <form action="/filtro/hoteles" method="GET">
                             @csrf 
                             <div class="form-group mt-4">
@@ -50,82 +50,99 @@
             
             
             <div class="col-md-9">
+             
                 @foreach ($hoteles as $value)
-                <form action='/detalle/reserva/{{ $value->id}}' method="GET" enctype="multipart/form-data">
-                    @csrf 
-                <div class="card mb-4 ">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="{{ asset($value->imagen) }}" class="card-img img-fluid rounded" alt="Imagen" style="object-fit: cover; height: 100%;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                               
-                     
-                                <h1 class="card-title" style="font-family: 'Noto Sans', sans-serif;
-                                font-family: 'Roboto', sans-serif;"><strong>{{ $value->nombre }}</strong></h3>
-                                @switch($value->categoria )
-                                    @case("uno")
-                                        <i class="fas fa-star text-warning"></i>
-                                        @break
-                                    @case("dos")
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        @break
-                                    @case("tres")
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        @break
-                                    @case("cuatro")
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        @break
-                                    @case("cinco")
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        @break
-                                    @default
-                                @endswitch
-                   
-                                <p class="card-text" style="font-family: 'Montserrat', sans-serif;
-                                font-family: 'Noto Sans', sans-serif;
-                                font-family: 'Roboto', sans-serif;">{{ $value->ciudad }}</p>
-                                <p class="card-text" style="font-family: 'Montserrat', sans-serif;
-                                font-family: 'Noto Sans', sans-serif;
-                                font-family: 'Roboto', sans-serif;">{{ $value->pais }}</p>
+                  @php
+                    $habitaciones = App\Models\Habitaciones::where('hotel_id', $value->id)->get();
+                    $cont = $habitaciones->count();
+                  @endphp
 
-                                <p class="card-text" style="font-family: 'Montserrat', sans-serif;
-                                font-family: 'Noto Sans', sans-serif;
-                                font-family: 'Roboto', sans-serif;">{{ $value->descripcion }}</p>
-            
-                                <input type="hidden" name="fechaEntrada" id="fechaEntrada" value="{{ $fechaEntrada }}">
-                                <input type="hidden" name="fechaSalida" id="fechaSalida" value="{{ $fechaSalida }}">
-                                <input type="hidden" name="ciudad" id="ciudad" value="{{ $ciudad }}">
-      
-                                <button class="btn btn-danger mt-4">Buscar</button>
-                                
+                  @if ($cont != 0 && $value->usuario_id != Auth::user()->id)
+                  <form action='/detalle/reserva/{{ $value->id}}' method="GET" enctype="multipart/form-data">
+                        @csrf 
+                    <div class="card mb-4 ">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{ asset($value->imagen) }}" class="card-img img-fluid rounded" alt="Imagen" style="object-fit: cover; height: 100%;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                  
+                        
+                                    <h1 class="card-title" style="font-family: 'Noto Sans', sans-serif;
+                                    font-family: 'Roboto', sans-serif;"><strong>{{ $value->nombre }}</strong></h3>
+                                    @switch($value->categoria )
+                                        @case("uno")
+                                            <i class="fas fa-star text-warning"></i>
+                                            @break
+                                        @case("dos")
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            @break
+                                        @case("tres")
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            @break
+                                        @case("cuatro")
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            @break
+                                        @case("cinco")
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            @break
+                                        @default
+                                    @endswitch
+                      
+                                    <p class="card-text" style="font-family: 'Montserrat', sans-serif;
+                                    font-family: 'Noto Sans', sans-serif;
+                                    font-family: 'Roboto', sans-serif;">{{ $value->ciudad }}</p>
+                                    <p class="card-text" style="font-family: 'Montserrat', sans-serif;
+                                    font-family: 'Noto Sans', sans-serif;
+                                    font-family: 'Roboto', sans-serif;">{{ $value->pais }}</p>
+
+                                    <p class="card-text" style="font-family: 'Montserrat', sans-serif;
+                                    font-family: 'Noto Sans', sans-serif;
+                                    font-family: 'Roboto', sans-serif;">{{ $value->descripcion }}</p>
+
+                                      
+
+                                      @if ($cont <= 5 && $cont >= 1)
+                                          <p class="text-danger"><strong>¡Solo quedan {{$cont}} habitaciones!</strong></p>
+                                      @endif
+
+                
+                                    <input type="hidden" name="fechaEntrada" id="fechaEntrada" value="{{ $fechaEntrada }}">
+                                    <input type="hidden" name="fechaSalida" id="fechaSalida" value="{{ $fechaSalida }}">
+                                    <input type="hidden" name="ciudad" id="ciudad" value="{{ $ciudad }}">
+          
+                                    <button class="btn btn-danger mt-4">Buscar</button>
+                                    
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+                      
+                  @endif
+                
             @endforeach
-        
-            
 
+      
+                  
             </div>
         </div>
 
         
     </div>
 
-    <!-- Footer -->
+<!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-muted" style="margin-top: auto;">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -184,16 +201,16 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#!" class="text-reset">SQL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#!" class="text-reset">JAVASCRIPT</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Vue</a>
+              <a href="#!" class="text-reset">LARAVAEL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Laravel</a>
+              <a href="#!" class="text-reset">PHP</a>
             </p>
           </div>
           <!-- Grid column -->

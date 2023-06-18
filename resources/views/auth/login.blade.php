@@ -1,6 +1,9 @@
 <x-guest-layout>
     <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-auth-session-status class="mb-4" :status="session('status')"  />
+    <div class="text-center mb-6">
+        <h1 style="font-size: 36px; font-family: 'Quicksand', sans-serif;"><strong>Hoteles</strong></h1>
+    </div>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf

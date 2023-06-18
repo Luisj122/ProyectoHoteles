@@ -9,7 +9,7 @@
                
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 " >
-                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 >
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50" >
                             <tr>
                                 <th scope="col" class="px-6 py-3">
                                     Tipo
@@ -107,9 +107,11 @@
 
             </div>
         </div>
+    </div>
 
-        <!-- Footer -->
-<footer class="text-center text-lg-start bg-dark text-muted" style="margin-top: auto;">
+</x-app-layout>
+    <!-- Footer -->
+ <footer class="text-center text-lg-start bg-dark text-muted" style="margin-top: auto;">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
@@ -167,16 +169,16 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#!" class="text-reset">SQL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#!" class="text-reset">JAVASCRIPT</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Vue</a>
+              <a href="#!" class="text-reset">LARAVAEL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Laravel</a>
+              <a href="#!" class="text-reset">PHP</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -227,7 +229,4 @@
     </div>
   </footer>
   <!-- Footer -->
-
-    </div>
-
-</x-app-layout
+    

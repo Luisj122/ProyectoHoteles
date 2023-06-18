@@ -138,8 +138,10 @@ class HotelesController extends Controller
     {
         $ciudad = $request->input('ciudad');
         $fechaInicio = $request->input('fecha_entrada');
-        $fechaSalida = $request->input('fecha_salida');
- 
+        $fechaSalida = $request->input('fecha_salida'); 
+   
+
+
         return view('hoteles.reserva', ['hoteles' => Hoteles::where('ciudad', $ciudad)->get(), 'fechaEntrada' => $fechaInicio, 'fechaSalida' => $fechaSalida, 'ciudad'=>$ciudad]);
     }
 

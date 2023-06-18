@@ -2,7 +2,11 @@
     <div class="mt-4">
         <form action="/regresar" method="GET">
             @csrf
-            <button><i class="fas fa-arrow-left text-blue-500 mr-1" style="margin-left: 130px; font-family: 'Open Sans', sans-serif;"></i>Ver todos los alojamientos</button>
+            <button class="fas fa-arrow-left text-blue-500 mr-1" style="margin-left: 130px; font-family: 'Open Sans', sans-serif;">
+                <-Ver todos los alojamientos
+              </button>
+              <button>
+
             <input type="hidden" id="ciudad" name="ciudad" value="{{$ciudad}}">
             <input type="hidden" id="fechaEntradas" name="fechaEntrada" value="{{$fechaEntrada}}">
             <input type="hidden" id="fechaSalidas" name="fechaSalida" value="{{$fechaSalida}}">
@@ -37,14 +41,17 @@
                             </div>
                         </div>
                         <div class="mt-4 text-center">
-                            <button class="btn btn-primary">Buscar</button>
+                            <button class="btn btn-primary d-none">Reservar</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+     
         
         <div class="row mx-auto mt-4 mb-4" style="max-width: 80%;">
+            <h1 style="text-align: center; font-weight: bold; font-size: 34px; font-family: 'Poppins', sans-serif;">Habitaciones</h1>
+
             @foreach ($habitaciones as $habitacion)
                 @if ($hoteles->id == $habitacion->hotel_id)
                     <div class="col-md-4 col-sm-6 mb-4">
@@ -54,8 +61,10 @@
                                 <img src="{{ asset($habitacion->imagen) }}" class="card-img-top" alt="Imagen">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $habitacion->descripcion }}</h5>
-                                    <p class="card-text">Precio:{{ $habitacion->precio }}</p>
-                                    <button class="btn btn-danger mt-4">Buscar</button>
+                               
+                                        <p class="card-text mt-4"><strong>{{ $habitacion->precio }}€ por noche</strong></p>                  
+                                        <button class="btn btn-danger mt-4 rounded-pill">Reservar</button>
+                                    
                                 </div>
                             </div>
                             
@@ -72,7 +81,7 @@
         </div> 
 
         <!-- Footer -->
-<footer class="text-center text-lg-start bg-dark text-muted" style="margin-top: auto;">
+ <footer class="text-center text-lg-start bg-dark text-muted" style="margin-top: auto;">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <!-- Left -->
@@ -130,16 +139,16 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#!" class="text-reset">SQL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#!" class="text-reset">JAVASCRIPT</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Vue</a>
+              <a href="#!" class="text-reset">LARAVAEL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Laravel</a>
+              <a href="#!" class="text-reset">PHP</a>
             </p>
           </div>
           <!-- Grid column -->

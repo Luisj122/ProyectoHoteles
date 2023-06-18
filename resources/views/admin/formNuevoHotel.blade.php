@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label>Categoria:</label>
+                            <label>Calificacion:</label>
                             <select name="categoria">
                                 <option value="uno">Uno</option>
                                 <option value="dos">Dos</option>

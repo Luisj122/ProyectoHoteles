@@ -181,5 +181,8 @@ class HabitacionesController extends Controller
         $habitaciones->save();
         $habitaciones_users->delete();
         return back();
+
+    
+
     }
 }

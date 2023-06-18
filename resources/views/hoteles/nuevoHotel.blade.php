@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="mb-4">
-                            <label class="block text-gray-700">Categoria:</label>
+                            <label class="block text-gray-700">Calificacion:</label>
                             <select name="categoria" class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none">
                                 <option value="uno">Uno</option>
                                 <option value="dos">Dos</option>
@@ -59,7 +59,10 @@
             </div>
         </div>
 
-        <!-- Footer -->
+        
+    </div>
+</x-app-layout>
+<!-- Footer -->
 <footer class="text-center text-lg-start bg-dark text-muted" style="margin-top: auto;">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -118,16 +121,16 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#!" class="text-reset">SQL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#!" class="text-reset">JAVASCRIPT</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Vue</a>
+              <a href="#!" class="text-reset">LARAVAEL</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Laravel</a>
+              <a href="#!" class="text-reset">PHP</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -178,6 +181,3 @@
     </div>
   </footer>
   <!-- Footer -->
-
-    </div>
-</x-app-layout>
