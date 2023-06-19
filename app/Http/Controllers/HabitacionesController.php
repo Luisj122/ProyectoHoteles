@@ -169,7 +169,8 @@ class HabitacionesController extends Controller
      */
     public function destroy(Habitaciones $habitaciones)
     {
-        //
+        $habitaciones->delete();
+        return back();
     }
 
 

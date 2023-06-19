@@ -79,6 +79,7 @@ Route::middleware(['auth', 'rol:admin'])->group(function () {
 
     //Rutas para la gestion de habitaciones
     Route::get('/habitacion/nuevo/{hotel}', [HabitacionesController::class, 'create']);
+    Route::get('/habitacion/borrar/{habitacion}', [HabitacionesController::class, 'destroy']);
     Route::post('/habitacion/store/{hotel}',[HabitacionesController::class, 'store']);
     Route::post('/habitacion/update/{habitaciones}',[HabitacionesController::class, 'update']);
 
