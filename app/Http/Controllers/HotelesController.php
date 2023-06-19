@@ -32,13 +32,13 @@ class HotelesController extends Controller
 
     public function vistaReserva(User $user) 
     {
-        //echo Hoteles::where('usuario_id', 3)->count();
 
         $habitaciones = Habitaciones_users::all();
   
         return view('habitaciones.vistaReserva', ['reservas' => $user->habitaciones()->get(), 'detalles'=>$habitaciones, 'usuarios'=>$user]);
     }
 
+    //Metodo para poder regresar de la vista de habitaciones a la vista de hotekes
     public function regresar(Request $request) 
     {
         $ciudad = $request->input('ciudad');
@@ -113,7 +113,7 @@ class HotelesController extends Controller
     }
 
     /**
-     * 
+     * Metodo para filtrar los hoteles
      */
     public function filtroHoteles(Request $request)
     {

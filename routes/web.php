@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'rol:creador'])->group(function () {
+    //Rutas para la gestion del creador
     Route::get('/creador', [HotelesController::class, 'hotelesCreador']); 
     Route::get('/hotel/borrar/{hoteles}' , [HotelesController::class, 'destroy']);
     Route::post('/hotel/update/{hoteles}' , [HotelesController::class, 'update']);

@@ -1,4 +1,7 @@
 <x-guest-layout>
+    <div class="text-center mb-6">
+        <h1 style="font-size: 36px; font-family: 'Quicksand', sans-serif;"><strong>Hoteles</strong></h1>
+    </div>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
