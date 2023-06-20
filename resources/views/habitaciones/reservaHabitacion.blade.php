@@ -14,7 +14,7 @@
     </div>
 
     <div class="text-center mt-4">
-        <img src="{{ asset($hoteles->imagen) }}" alt="Imagen del hotel" class="w-11/12 mx-auto" style="height: 500px;">
+        <img src="{{ asset($hoteles->imagen) }}" alt="Imagen del hotel" class="w-11/12 mx-auto" style="height: 600px;">
     </div>   
    
 
