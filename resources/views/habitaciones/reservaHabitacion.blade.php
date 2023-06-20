@@ -58,7 +58,7 @@
                         <form action="/hotel/habitacion/reservar" method="GET">
                             @csrf
                             <div class="card">
-                                <img src="{{ asset($habitacion->imagen) }}" class="card-img-top" alt="Imagen" style="width: 50%; height: 50%" >
+                                <img src="{{ asset($habitacion->imagen) }}" class="card-img-top" alt="Imagen" style="width: 100%; height: 50%" >
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $habitacion->descripcion }}</h5>
                                
