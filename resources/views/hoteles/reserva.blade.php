@@ -74,7 +74,7 @@
                  
           
                                       @if ($cont <= 5 && $cont >= 1)
-                                          @if ($linre > 0)
+                                          @if ($libre > 0)
                                               <p class="text-danger"><strong>¡Solo quedan {{ $libre }} habitaciones!</strong></p>
                                           @endif
                                       @endif
