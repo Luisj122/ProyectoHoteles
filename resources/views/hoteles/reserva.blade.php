@@ -54,6 +54,7 @@
                 @foreach ($hoteles as $value)
                   @php
                     $habitaciones = App\Models\Habitaciones::where('hotel_id', $value->id)->get();
+                    $libre = App\Models\Habitaciones::pluck('disponibilidad')->get();
                     $cont = $habitaciones->count();
                   @endphp
 
@@ -113,7 +114,7 @@
 
                                       
 
-                                      @if ($cont <= 5 && $cont >= 1)
+                                      @if ($cont <= 5 && $cont >= 1 && $libre == 'libre')
                                           <p class="text-danger"><strong>¡Solo quedan {{$cont}} habitaciones!</strong></p>
                                       @endif
 
