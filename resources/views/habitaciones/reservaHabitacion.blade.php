@@ -2,7 +2,7 @@
     <div class="mt-4">
         <form action="/regresar" method="GET">
             @csrf
-            <button class="fas fa-arrow-left text-blue-500 mr-1" style="margin-left: 130px; font-family: 'Open Sans', sans-serif;">
+            <button class="text-blue-500 mr-1" style="margin-left: 130px; font-family: 'Open Sans', sans-serif;">
                 <-Ver todos los alojamientos
               </button>
               <button>
