@@ -9,7 +9,7 @@
                         @csrf
 
                         <div class="mb-4">
-                            <label class="block text-gray-700">Nombre:</label>
+                            <label class="block">Nombre:</label>
                             <input class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="nombre" name="nombre" type="text" value="{{ old('nombre') }}" required>
                         </div>
 
