@@ -3,13 +3,13 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden sm:rounded-lg">
                 <div class="p-6">
-                    <h3 class='text-lg text-green-500 mb-4'>Nuevo Hotel</h3>
+                    <h3 class='text-lg mb-4'>Nuevo Hotel</h3>
 
                     <form class="bg-white px-8 pt-6 pb-8 mb-4" method="POST" action="/hoteles/nuevo" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mb-4">
-                            <label class="block">Nombre:</label>
+                            <label class="block text-gray-700">Nombre:</label>
                             <input class="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="nombre" name="nombre" type="text" value="{{ old('nombre') }}" required>
                         </div>
 
