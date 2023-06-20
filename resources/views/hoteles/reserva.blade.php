@@ -114,7 +114,7 @@
 
                                       
 
-                                      @if ($cont <= 5 && $cont >= 1 && $libre == 'libre')
+                                      @if ($cont <= 5 && $cont >= 1 && $libre != 'ocupada')
                                           <p class="text-danger"><strong>¡Solo quedan {{$cont}} habitaciones!</strong></p>
                                       @endif
 
