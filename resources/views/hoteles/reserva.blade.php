@@ -54,7 +54,7 @@
                 @foreach ($hoteles as $value)
                   @php
                     $habitaciones = App\Models\Habitaciones::where('hotel_id', $value->id)->get();
-                    $libre = App\Models\Habitaciones::pluck('disponibilidad')->get();
+                    $libre = App\Models\Habitaciones::pluck('disponibilidad');
                     $cont = $habitaciones->count();
                   @endphp
 
