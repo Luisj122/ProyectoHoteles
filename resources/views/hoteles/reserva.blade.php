@@ -142,6 +142,7 @@
         
     </div>
 
-    <x-footer />
+    
 
 </x-app-layout>
+<x-footer />
