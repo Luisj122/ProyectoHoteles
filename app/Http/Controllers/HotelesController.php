@@ -177,13 +177,14 @@ class HotelesController extends Controller
 
         $usuario = User::find(Auth::user()->id);
 
-        if(Hoteles::where('usuario_id', Auth::user()->id)->count() < 0){
+        if(Hoteles::where('usuario_id', Auth::user()->id)->count() == 0){
             $usuario->rol="cliente";
             $usuario->save();
             return redirect('/habitacion');
         }else{
             return back();
         }
+
         
     }
 }
